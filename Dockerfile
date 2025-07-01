@@ -1,14 +1,24 @@
-FROM alpine:latest
+FROM ubuntu:24.04
+
+ENV QT_SELECT=qt6
 
 # Install required packages
-RUN apk add --no-cache \
-    git \
-    build-base \
-    mesa-dev \
-    libmodbus-dev \
-    qt5-qtbase-dev \
-    qt5-qtcharts-dev \
-    qt5-qtserialport-dev
+RUN apt update
+RUN apt install -y git
+RUN apt install -y libgl1-mesa-dev
+RUN apt install -y libegl1-mesa-dev
+RUN apt install -y libmodbus-dev
+RUN apt install -y pkg-config
+RUN apt install -y build-essential
+RUN apt install -y qt6-base-dev
+RUN apt install -y qt6-tools-dev
+RUN apt install -y qt6-tools-dev-tools
+RUN apt install -y qt6-serialport-dev
+# libqt6serialbus6-dev
+RUN apt install -y qt6-charts-dev 
+# libqt6charts6-dev
+
+RUN apt clean
 
 # Set up the default command (optional)
 CMD ["/bin/sh"]

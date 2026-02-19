@@ -14,6 +14,7 @@ RUN apt install -y qt6-base-dev
 RUN apt install -y qt6-tools-dev
 RUN apt install -y qt6-tools-dev-tools
 RUN apt install -y qt6-serialport-dev
+RUN apt install -y qt6-serialbus-dev
 # libqt6serialbus6-dev
 RUN apt install -y qt6-charts-dev 
 # libqt6charts6-dev
